@@ -52,6 +52,7 @@ int main() {
 int convertBinToDec(const string& binStr) {
     int dec = 0;
     for (int i = 0; i < binStr.length(); i++) {
+        // Note that the indices are opposite for binStr and BIN_VAL
         int index = binStr.length() - 1 - i;
         if (binStr[index] == '1') dec += BIN_VAL[i];
     }
@@ -67,6 +68,7 @@ int convertBinToDec(const string& binStr) {
 long convertHexToDec(const string& hexStr) {
     long dec = 0;
     for (int i = 0; i < hexStr.length(); i++) {
+        // Node that indices are opposite for hexStr and HEX_DEC_VAL
         int index = hexStr.length() - 1 - i;
         int mult = HEX_DEC_VAL.at(hexStr[index]);
         // Instead, this code is also acceptable, without using the global hash table variable
